@@ -3,6 +3,7 @@ import scrapy
 from chili_spider.items import newsListItem
 
 class chiliSpider(scrapy.Spider):
+    #爬取bbs首页帖子列表并逐一爬取其内容与回复
     name = "bbs"
     allowed_domains = ["e658.cn"]
     start_urls = [
