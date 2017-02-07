@@ -1,0 +1,305 @@
+@charset "UTF-8";
+/* 任务：类命名 card格式 新闻列表格式 footer 格式 */
+/* style reset */
+body,div,h1,h2,h3,h4,h5,h6,h7,h8,ul,li,ol {
+    margin:0;
+    padding:0;
+}
+ul {
+    list-style:none;
+}
+a {
+    text-decoration:none;
+}
+/* $forum-style */
+.forum-wrapper {
+    background:url('./chili-white.png') repeat;
+}
+.forum-header {
+    background:url('./chili.png') center/cover;
+}
+.forum-card {
+}
+.forum-card__slide {
+    width:calc(97% - 16px);
+    margin:24px auto 0px auto;
+}
+.forum-card__module{
+    width:97%;
+    margin:15px auto;
+}
+.topic-list {
+    margin:0 auto;
+    padding-bottom:4px;
+    width:calc(100% - 20px);
+    font-size:16px;
+}
+.topic-list__item {
+    padding:8px 0 4px 0;
+    overflow:hidden;
+    border-top:1px solid rgba(0,0,0,0.1);
+    position:relative;
+}
+.topic-list__topic {
+    display:block;
+    width:85%;
+    float:left;
+}
+.topic-list__topic-link {
+    display:inline-block;
+    width:100%;
+    color:#000;
+}
+.topic-list__author {
+    padding-left:5px;
+    float:left;
+    clear:left;
+    font-size:12px;
+    color:#778077;
+}
+.topic-list__reply {
+    padding:0px 10px;
+    font-size:12px;
+    text-align:center;
+    background:#aab0c6;
+    color:#fff;
+    border-radius:12px;
+    position:absolute;
+    top:50%;
+    right:10px;
+    transform:translate(0,-50%);
+}
+.topic-detail {
+    font-size:14px;
+}
+.topic-detail__floor {
+    border-top:1px solid rgba(0,0,0,0.1);
+    overflow:hidden;
+}
+.topic-detail__title {
+    margin:10px 12px 0 12px;
+    padding-bottom:5px;
+    border-bottom:1px solid rgba(0,0,0,0.1);
+    font-size:18px;
+}
+.topic-detail__avatar {
+    width:64px;
+    height:64px;
+    border-radius:4px;
+}
+.topic-detail__avatar-link {
+    float:left;
+    margin:10px;
+    color:#000;
+    font-weight:bloder;
+}
+.topic-detail__author-name {
+    display:block;
+    padding-top:10px;
+    overflow:hidden;
+}
+.topic-detail__author-link {
+    font-weight:bold;
+}
+.topic-detail__hits-and-reply {
+    display:block;
+    overflow:hidden;
+}
+.topic-detail__reply-time {
+    display:block;
+    overflow:hidden;
+}
+.topic-detail__content {
+    margin-top:15px;
+    padding:12px;
+    border-top:1px solid rgba(0,0,0,0.1);
+    clear:left;
+}
+.topic-detail-comment__author-info {
+    float:left;
+    overflow:hidden;
+}
+    .topic-detail-comment__avatar-link {
+        display:block;
+        margin:10px;
+    }
+    .topic-detail-comment__avatar {
+        width:32px;
+        height:32px;
+        border-radius:4px;
+    }
+.topic-detail-comment__floor-info {
+    float:left;
+    position:relative;
+    margin-top:10px;
+    height:32px;
+    line-height:32px;
+    width:calc(100% - 52px);
+}
+    .topic-detail-comment__author {
+        display:inline-block;
+        color:#778087;
+        font-weight:bold;
+    }
+    .topic-detail-comment__time {
+        margin:0 10px;
+        color:#ccc;
+    }
+    .topic-detail-comment__floor-counter {
+        position:absolute;
+        right:10px;
+        color:#ccc;
+    }
+.topic-detail-comment__content {
+    float:left;
+    width:calc(100% - 52px);
+    padding-right:10px;
+    margin-bottom:5px;
+    box-sizing:border-box;
+}
+/* loading mask animation */
+.loading {
+    position:relative;
+    min-height:350px;
+    background-color:#e85459;
+}
+.loading__spinner {
+    margin:auto;
+    position:absolute;
+    width:50px;
+    height:50px;
+    border-radius:100%;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+}
+.loading__spinner::before,
+.loading__spinner:after {
+    content:"";
+    margin:auto;
+    position:absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    width:30px;
+    height:30px;
+    border:5px solid transparent;
+    border-bottom:5px solid #fff;
+    border-radius:100%;
+    animation:rotate 1s linear infinite;
+}
+.loading__spinner::before {
+    width:40px;
+    height:40px;
+    animation-direction:reverse;
+}
+@keyframes rotate {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+.forum-card__module {
+    min-height:350px;;
+}
+.React-topicDetail {
+}
+.sliding {
+    animation-name:slidout;
+    animation-duration:1s;
+    animation-timing-function:ease-in-out;
+    animation-fill-mode:forwards;
+}
+@keyframes slidout {
+    0% {
+        transform:translateY(0);
+    }
+    100% {
+        transform:translateY(-350px);
+    }
+}
+.topic-detail {
+    animation-name:slidin;
+    animation-duration:1s;
+    animation-timing-function:ease-in-out;
+    animation-fill-mode:forwards;
+    opacity:0;
+}
+@keyframes slidin {
+    0% {
+        transform:translateY(0);
+        opacity:0;
+    }
+    100% {
+        transform:translateY(-350px);
+        opacity:1;
+    }
+}
+/* module animation */
+.forum-card__slide--out {
+    display:none;
+}
+.forum-card__module--animation {
+    margin:15px auto;
+    animation-name:fade;
+    animation-duration:1s;
+    animation-timing-function:ease-in-out;
+    animation-fill-mode:forwards;
+}
+@keyframes fade {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+/* custom menu icon animation */
+.custom-menu {
+    position:absolute;
+    top:0;left:0;right:0;bottom:0;
+    margin:auto;
+    width:20px;
+    height:2px;
+    background-color:#fff;
+    transition-duration:.5s;
+    text-indent:-9999px;
+}
+.custom-menu::before, .custom-menu::after {
+    content:"";
+    display:block;
+    position:absolute;
+    width:20px;
+    height:2px;
+    background-color:#fff;
+    top:-5px;
+    transition:.5s;
+}
+.custom-menu::after {
+    top:5px;
+}
+.custom-menu--back {
+    transform:rotateZ(180deg);
+}
+.custom-menu--back::before {
+    transform:rotateZ(45deg) scale(0.7,1) translate(7px,-4px);
+}
+.custom-menu--back::after {
+    transform:rotateZ(-45deg) scale(0.7,1) translate(7px,4px);
+}
+/* 非 BEM 命名法 ----- 覆盖MDL */
+.topic-detail p {
+    margin:0;
+}
+.topic-detail__content img,
+.topic-detail-comment__content img {
+    width:100%;
+}
+.topic-detail__content .emoji,
+.topic-detail-comment__content .emoji {
+    width:auto;
+}

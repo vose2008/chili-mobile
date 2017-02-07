@@ -1,0 +1,61 @@
+<!-- index.html -->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chili mobile</title>
+        <!-- react & jquery & router -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="static/ReactRouter.js"></script>
+        <!-- app jsx -->
+        <script type="text/jsx" src="./static/forum.jsx"></script>
+        <!-- MDL -->
+        <link rel="stylesheet" href="static/material.min.css">
+        <script src="static/material.min.js"></script>
+        <!-- custom style -->
+        <link rel="stylesheet" href="./static/forum.css">
+    </head>
+    <body>
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header forum-wrapper">
+            <div class="mdl-layout__drawer">
+            </div>
+            <!-- header -->
+            <header class="mdl-layout__header mdl-layout__header--transparent mdl-shadow--4dp forum-header">
+                <div class="mdl-layout__header-row">
+                    <span class="mdl-layout-title">辣椒Chili</span>
+                    <div class="mdl-layout-spacer"></div>
+                    <span class="mdl-layout-icon"></span>
+                </div>
+            </header>
+            <!-- main -->
+            <main class="mdl-layout__content">
+                <!-- card slide -->
+                <div class="mdl-card mdl-shadow--2dp forum-card__slide">
+                    <div class="mdl-card__title">
+                        <h4 class="mdl-card__title-text">Title of chili forum</h4>
+                    </div>
+                    <div class="mdl-card__media">slide position</div>
+                    <div class="mdl-card__supporting-text"></div>
+                </div>
+                <!-- grid -->
+                <div class="mdl-grid forum-card">
+                    <div id="module" class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--2dp forum-card__module"></div>
+                </div>
+                <!-- footer -->
+                <footer class="mdl-mini-footer forum-footer">
+                    <div class="mdl-mini-footer__left-section">
+                        <div class="mdl-logo">logo</div>
+                        <ul class="mdl-mini-footer--link-list">
+                            <li>SAE</li>
+                            <li>MDL</li>
+                            <li>React</li>
+                            <li>Python</li>
+                        </ul>
+                    </div>
+                </footer>
+            </main>
+        </div>
+    </body>
+</html>
